@@ -20,7 +20,6 @@ header {
     width: 100%;
 }
 
-
 main {
     display: grid;
     grid-template-columns: 25% 75%;
@@ -59,6 +58,15 @@ input {
     font-size: large;
 }
 
+.search-history {
+    grid-row: 2;
+    width: 100%;
+}
+
+.search-history button {
+    width: 70%
+}
+
 main article {
     display: grid;
     grid-template-rows: 50% 50%;
@@ -79,19 +87,33 @@ article section h1 {
     font-weight: 900;
 }
 
-#current-weather-box {
-    display: grid;
-    grid-template-columns: 35% 65%;
-    width: 50%;
-    height: 70%;
-    border: 1px solid whitesmoke;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 2%;
-    box-shadow: 5px 8px 8px 5px green;
+.current-weather-first {
+    grid-column: 1;
+    border-right: 1px solid whitesmoke;
 }
 
-#city-name {
+#city-name-date {
+    grid-column: 1;
+    margin-top: 4px;
+    font-size: large;
+    font-weight: 700;
+}
+
+#current-temp {
+    font-size: larger;
+    font-weight: 800;
+}
+
+#uv-link {
+    display: none;
+}
+
+#current-uv-index {
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.date {
     margin-top: 4px;
     font-size: large;
     font-weight: 700;
@@ -103,6 +125,11 @@ article section h1 {
     text-align: center;
     grid-row: 2;
     color: whitesmoke
+}
+
+.weatherIcon {
+    width: 75%;
+    justify-self: center;
 }
 
 #future-weather-header {
@@ -141,7 +168,6 @@ footer {
         min-height: 100vh;
         width: 100%;
     }
-    
     header {
         background-color: darkslateblue;
         color: whitesmoke;
@@ -155,8 +181,6 @@ footer {
         grid-column: span 3;
         width: 100%;
     }
-    
-    
     main {
         display: grid;
         grid-template-rows: 20% 80%;
@@ -164,10 +188,8 @@ footer {
         grid-column: span 3;
         grid-row: 2;
     }
-    
     main aside {
         display: inline-flex;
-        grid-template-rows: 20% 80%;
         grid-column: span 3;
         grid-row: 1;
         background-color: darkgray;
@@ -175,87 +197,89 @@ footer {
         width: 100%;
         overflow-y: scroll;
     }
-    
     .city-search {
         justify-content: center;
         grid-row: 1;
         width: 100%;
         text-align: center;
     }
-    
     #search-box {
         width: 80%;
         margin-top: 5px
     }
-    
     #search-btn {
         width: 8%;
         height: 25%;
         margin-top: 10px;
         cursor: pointer;
     }
-    
     input {
         width: 70%;
         font-size: medium;
     }
-    
     main article {
         display: grid;
         grid-template-rows: 50% 50%;
         grid-column: span 3;
         background-color: black;
     }
-    
     .current-weather {
         grid-row: 1;
         color: whitesmoke;
         text-align: center;
         border-bottom: solid 1px whitesmoke;
+        width: 100%;
+        overflow-y: scroll;
     }
-    
     article section h1 {
         margin-top: 4px;
         font-size: x-large;
         font-weight: 900;
     }
-    
-    #current-weather-box {
-        display: grid;
-        grid-template-rows: 35% 65%;
-        width: 50%;
-        height: 70%;
-        border: 1px solid whitesmoke;
-        margin-left: 25%;
-        margin-right: 25%;
-        margin-top: 2%;
-        box-shadow: 5px 8px 8px 5px green;
+
+    #weather-icon {
+        align-self: center;
+    }
+    #city-name-date {
+        grid-column: 1;
+        margin-top: 4px;
+        font-size: medium;
+        font-weight: 700;
     }
     
+    #current-temp {
+        font-size: medium;
+        font-weight: 800;
+        margin-bottom: 4px;
+    }
+    
+    .date {
+        margin-top: 4px;
+        font-size: small;
+        font-weight: 700;
+    }
+
     .future-weather {
         display: grid;
         grid-template-rows: 20% 80%;
         text-align: center;
         grid-row: 2;
-        color: whitesmoke
+        color: whitesmoke;
+        overflow-y: scroll;
     }
-    
     #future-weather-header {
         grid-row: 1;
     }
-    
     .forcast-boxes {
         display: grid;
-        grid-template-rows: 20% 20% 20% 20% 20%;
+        grid-template-rows: auto auto auto auto auto;
         grid-template-columns: 100%;
     }
-    
     .future-weather-box {
         display: grid;
         grid-column: auto;
         border: 1px dotted whitesmoke;
     }
-    
     footer {
         background-color: darkslateblue;
         color: whitesmoke;
@@ -268,5 +292,4 @@ footer {
         grid-column: span 3;
         grid-row: 3;
     }
-
 }
