@@ -91,6 +91,12 @@ article section h1 {
     box-shadow: 5px 8px 8px 5px green;
 }
 
+#city-name {
+    margin-top: 4px;
+    font-size: large;
+    font-weight: 700;
+}
+
 .future-weather {
     display: grid;
     grid-template-rows: 20% 80%;
@@ -182,10 +188,10 @@ footer {
         margin-top: 5px
     }
     
-    figure img {
+    #search-btn {
         width: 8%;
         height: 25%;
-        margin-top: 5px;
+        margin-top: 10px;
         cursor: pointer;
     }
     
