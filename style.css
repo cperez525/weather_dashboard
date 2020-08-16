@@ -39,22 +39,10 @@ main aside {
 }
 
 .city-search {
-    display: grid;
-    grid-template-rows: 50% 50%;
-}
-
-main aside h1 {
     grid-row: 1;
-    color: black;
-    font-weight: 900;
-    font-size: large;
-    margin-top: 5px;
 }
-
-
 
 #search-box {
-    grid-row: 2;
     width: 90%;
     margin-top: 5px
 }
@@ -174,16 +162,23 @@ footer {
     main aside {
         display: inline-flex;
         grid-template-rows: 20% 80%;
-        grid-template-columns: 50% 50%;
         grid-column: span 3;
         grid-row: 1;
         background-color: darkgray;
         text-align: left;
         width: 100%;
+        overflow-y: scroll;
+    }
+    
+    .city-search {
+        justify-content: center;
+        grid-row: 1;
+        width: 100%;
+        text-align: center;
     }
     
     #search-box {
-        width: 50%;
+        width: 80%;
         margin-top: 5px
     }
     
