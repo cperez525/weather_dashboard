@@ -26,8 +26,6 @@ function onPageLoad() {
             method: "GET"
         }).then(function (response) {
 
-            console.log(response)
-
             // gets city name and sets both the city name and current date to current weather header
             var returnedCity = response.name
             var currentDate = moment().format("MM/DD/YYYY")
