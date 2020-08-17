@@ -16,7 +16,7 @@ function onPageLoad() {
         }
 
         var cityName = localStorage.key(localStorage.length - 1)
-        var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=6&appid=" + apiKey
+        var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=40&appid=" + apiKey
 
 
         $.ajax({
@@ -57,14 +57,14 @@ function onPageLoad() {
             $(".forcast-boxes").empty()
             console.log(response)
 
-            for (i = 1; i < response.list.length; i++) {
+            for (i = 3; i < response.list.length; i += 8) {
 
                 console.log(response.list[i].dt_txt)
                 var futureWeatherBox = $("<div>").attr("data-number", i)
                 futureWeatherBox.addClass("future-weather-box")
 
                 var futureDt = $("<h3>").addClass("date")
-                futureDt.text(moment(currentDate).add(i, "day").format("MM/DD/YYYY"))
+                futureDt.text(moment(response.list[i].dt_txt).format("MM/DD/YYYY"))
 
                 var futureIconEl = $("<img>").addClass("weatherIcon")
                 var futureIcon = response.list[i].weather[0].icon
@@ -127,7 +127,7 @@ function onPageLoad() {
 function setInfo() {
 
     var cityName = $("#text-area").val()
-    var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=6&appid=" + apiKey
+    var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=40&appid=" + apiKey
 
     $.ajax({
         url: forcastUrl,
@@ -170,13 +170,13 @@ function setInfo() {
 
         $(".forcast-boxes").empty()
 
-        for (i = 1; i < response.list.length; i++) {
+        for (i = 3; i < response.list.length; i += 8) {
 
             var futureWeatherBox = $("<div>").attr("data-number", i)
             futureWeatherBox.addClass("future-weather-box")
 
             var futureDt = $("<h3>").addClass("date")
-            futureDt.text(moment(currentDate).add(i, "day").format("MM/DD/YYYY"))
+            futureDt.text(moment(response.list[i].dt_txt).format("MM/DD/YYYY"))
 
             var futureIconEl = $("<img>").addClass("weatherIcon")
             var futureIcon = response.list[i].weather[0].icon
@@ -242,15 +242,21 @@ $("#search-btn").on("click", function () {
     setInfo()
 })
 
+$("#clear-history").on("click", function() {
+    $(".search-history").empty()
+    localStorage.clear()
+})
+
 $(".searched-city").on("click", function () {
 
     var cityName = $(this).text()
-    var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=6&appid=" + apiKey
+    var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&cnt=40&appid=" + apiKey
 
     $.ajax({
         url: forcastUrl,
         method: "GET"
     }).then(function (response) {
+        console.log(response)
 
         var returnedCity = response.city.name
         var currentDate = moment(response.list[0].dt_text).format("MM/DD/YYYY")
@@ -284,13 +290,13 @@ $(".searched-city").on("click", function () {
 
         $(".forcast-boxes").empty()
 
-        for (i = 1; i < response.list.length; i++) {
+        for (i = 3; i < response.list.length; i += 8) {
 
             var futureWeatherBox = $("<div>").attr("data-number", i)
             futureWeatherBox.addClass("future-weather-box")
 
             var futureDt = $("<h3>").addClass("date")
-            futureDt.text(moment(currentDate).add(i, "day").format("MM/DD/YYYY"))
+            futureDt.text(moment(response.list[i].dt_txt).format("MM/DD/YYYY"))
 
             var futureIconEl = $("<img>").addClass("weatherIcon")
             var futureIcon = response.list[i].weather[0].icon

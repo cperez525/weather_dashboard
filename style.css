@@ -67,6 +67,10 @@ input {
     width: 70%
 }
 
+#clear-history {
+    width: 83%;
+}
+
 main article {
     display: grid;
     grid-template-rows: 50% 50%;
