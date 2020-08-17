@@ -67,7 +67,7 @@ function onPageLoad() {
             cityLat = response.coord.lat
             cityLon = response.coord.lon
 
-            var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityLat + "&lon=" + cityLon
+            var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityLat + "&lon=" + cityLon
 
             $.ajax({
                 url: uvURL,
@@ -195,7 +195,7 @@ function setInfo() {
         cityLat = response.coord.lat
         cityLon = response.coord.lon
 
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityLat + "&lon=" + cityLon
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityLat + "&lon=" + cityLon
 
         $.ajax({
             url: uvURL,
@@ -335,7 +335,7 @@ $(".searched-city").on("click", function () {
         cityLat = response.coord.lat
         cityLon = response.coord.lon
 
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityLat + "&lon=" + cityLon
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityLat + "&lon=" + cityLon
 
         $.ajax({
             url: uvURL,
