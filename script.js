@@ -278,6 +278,13 @@ $("#search-btn").on("click", function () {
     setInfo()
 })
 
+// enter key listener for text box to cover use case as users will typically press enter instinctively
+$("#text-area").on("keypress", function(e) {
+    if (e.which === 13) {
+        setInfo()
+    }
+})
+
 // click listener for clear history button to clear local storage and search-history buttons
 $("#clear-history").on("click", function () {
     $(".search-history").empty()
