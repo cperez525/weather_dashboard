@@ -35,7 +35,7 @@ function onPageLoad() {
 
             // gets weather and adds src url to render icon
             var currentIcon = response.weather[0].icon
-            weatherIconEl.attr("src", "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
+            weatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
 
             // gets current temperature and colors temperature font based on temperature returned
             var currentTemp = ((response.main.temp - 273.15) * 1.80 + 32).toFixed(0)
@@ -116,7 +116,7 @@ function onPageLoad() {
 
                 var futureIconEl = $("<img>").addClass("weatherIcon")
                 var futureIcon = response.list[i].weather[0].icon
-                futureIconEl.attr("src", "http://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
+                futureIconEl.attr("src", "https://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
 
                 var temperatureEl = $("<p>").addClass("temperature")
                 var futureTemp = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(0)
@@ -182,7 +182,7 @@ function setInfo() {
                 currentCityDate.text(returnedCity + " (" + currentDate + ")")
 
                 var currentIcon = response.weather[0].icon
-                weatherIconEl.attr("src", "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
+                weatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
 
                 var currentTemp = ((response.main.temp - 273.15) * 1.80 + 32).toFixed(0)
                 currentTempEl.text(currentTemp + "ºF")
@@ -255,7 +255,7 @@ function setInfo() {
 
                     var futureIconEl = $("<img>").addClass("weatherIcon")
                     var futureIcon = response.list[i].weather[0].icon
-                    futureIconEl.attr("src", "http://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
+                    futureIconEl.attr("src", "https://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
 
                     var temperatureEl = $("<p>").addClass("temperature")
                     var futureTemp = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(0)
@@ -283,7 +283,7 @@ function setInfo() {
         })
 
         var currentIcon = response.weather[0].icon
-        weatherIconEl.attr("src", "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
+        weatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
 
         var currentTemp = ((response.main.temp - 273.15) * 1.80 + 32).toFixed(0)
         currentTempEl.text(currentTemp + "ºF")
@@ -359,7 +359,7 @@ function setInfo() {
 
             var futureIconEl = $("<img>").addClass("weatherIcon")
             var futureIcon = response.list[i].weather[0].icon
-            futureIconEl.attr("src", "http://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
+            futureIconEl.attr("src", "https://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
 
             var temperatureEl = $("<p>").addClass("temperature")
             var futureTemp = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(0)
@@ -423,7 +423,7 @@ $(".searched-city").on("click", function () {
         currentCityDate.text(returnedCity + " (" + currentDate + ")")
 
         var currentIcon = response.weather[0].icon
-        weatherIconEl.attr("src", "http://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
+        weatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + currentIcon + "@2x.png")
 
         var currentTemp = ((response.main.temp - 273.15) * 1.80 + 32).toFixed(0)
         currentTempEl.text(currentTemp + "ºF")
@@ -496,7 +496,7 @@ $(".searched-city").on("click", function () {
 
             var futureIconEl = $("<img>").addClass("weatherIcon")
             var futureIcon = response.list[i].weather[0].icon
-            futureIconEl.attr("src", "http://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
+            futureIconEl.attr("src", "https://openweathermap.org/img/wn/" + futureIcon + "@2x.png")
 
             var temperatureEl = $("<p>").addClass("temperature")
             var futureTemp = ((response.list[i].main.temp - 273.15) * 1.80 + 32).toFixed(0)
